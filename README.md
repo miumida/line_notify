@@ -37,7 +37,8 @@ notify:
     name: line_notify
     token: 'your token'
 ```
-<br><br>
+
+<br>
 
 ### 기본 설정값
 
@@ -46,6 +47,16 @@ notify:
 |platform| (필수) line_notify  |
 |name| (옵션) line_notify |
 |token| (필수) LINE Notify Token |
+
+<br>
+
+### 서비스 옵션
+|옵션|내용|
+|--|--|
+|stickerId| (옵션) stickerPackageId와 항상 함께 사용  |
+|stickerPackageId| (옵션) stickerId와 항상 함께 사용 |
+|imageFile| (옵션) LINE으로 전송할 이미지파일 경로. 예)'/config/media/wyze_cam/image.png' |
+
 <br>
 
 ## 참고사이트
