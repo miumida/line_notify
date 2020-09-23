@@ -38,6 +38,14 @@ notify:
     token: 'your token'
 ```
 <br><br>
+
+### 기본 설정값
+
+|옵션|내용|
+|--|--|
+|platform| (필수) line_notify  |
+|name| (옵션) line_notify |
+|token| (필수) LINE Notify Token |
 <br>
 
 ## 참고사이트
