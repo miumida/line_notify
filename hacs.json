@@ -1,1 +1,6 @@
-
+{
+  "name": "[KR] LINE Notify",
+  "country": "KR",
+  "domains": ["notify"],
+  "render_readme": true
+}
