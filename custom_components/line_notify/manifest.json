@@ -1,0 +1,7 @@
+{
+  "domain": "line_notify",
+  "name": "LINE Notify",
+  "documentation": "https://github.com/miumida/line_notify",
+  "requirements": [],
+  "codeowners": ["@miumida"]
+}
