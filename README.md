@@ -4,6 +4,8 @@
 ![Version v1.4][version-shield]
 
 LINE Notify를 이용하여, Homeassistant의 notify를 합니다.<br>
+네이버 스마트싱스 카페에 광역번개님이 올리신 글을 참고하여, Custom Components로 작성하였습니다.<br>
+Notify이기때문에 따로 센서가 생성되거나 하지는 않습니다. 서비스에서 notify 관련 서비스를 확인하시면 됩니다.<br>
 <br>
 
 ## Version history
@@ -60,7 +62,8 @@ notify:
 <br>
 
 ## 참고사이트
-[1] LINE 스티커 리스트 (<https://devdocs.line.me/files/sticker_list.pdf>)<br>
+[1] 네이버 Smartthings & Connected Home 카페 | 광역번개님의 HA에서 라인(LINE) 메신저 노티 받기 (<https://cafe.naver.com/stsmarthome/11415>)<br>
+[2] LINE 스티커 리스트 (<https://devdocs.line.me/files/sticker_list.pdf>)<br>
 
 
 [version-shield]: https://img.shields.io/badge/version-v1.0.0-orange.svg
