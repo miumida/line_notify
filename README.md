@@ -64,7 +64,7 @@ notify:
 
 ## 참고사이트
 [1] 네이버 Smartthings & Connected Home 카페 | 광역번개님의 HA에서 라인(LINE) 메신저 노티 받기 (<https://cafe.naver.com/stsmarthome/11415>)<br>
-[2] LINE 스티커 리스트 (<https://devdocs.line.me/files/sticker_list.pdf>)<br>
+[2] LINE 스티커 리스트 (<https://developers.line.biz/media/messaging-api/sticker_list.pdf>)<br>
 
 
 [version-shield]: https://img.shields.io/badge/version-v1.0.1-orange.svg
