@@ -1,4 +1,5 @@
 """ LINE Notify platform for notify component."""
+from http import HTTPStatus
 import logging
 import asyncio
 import io
@@ -14,7 +15,6 @@ from homeassistant.components.notify import (
     PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import HTTP_OK
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 import homeassistant.helpers.config_validation as cv
 
@@ -76,7 +76,7 @@ class LineNotificationService(BaseNotificationService):
 
         request = requests.post(url, headers=self._headers, data=data, files=file)
 
-        if request.status_code != HTTP_OK:
+        if request.status_code != HTTPStatus.OK:
             _LOGGER.error( "Error %d on load URL %s", request.status_code, request.url)
         else:
             _LOGGER.debug("Line Notify  send: %s", request.json())
