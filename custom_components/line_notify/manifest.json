@@ -4,5 +4,7 @@
   "documentation": "https://github.com/miumida/line_notify",
   "requirements": [],
   "codeowners": ["@miumida"],
-  "version": "1.0.3"
+  "iot_class": "cloud_polling",
+  "version": "1.1.0",
+  "config_flow": true
 }

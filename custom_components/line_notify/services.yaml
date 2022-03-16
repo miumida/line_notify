@@ -1,0 +1,22 @@
+# Example services.yaml entry
+
+send_message:
+  # Description of the service
+  description: "LINE Notify API를 이용하여 메세지를 전송합니다."
+  fields:
+    message:
+      description: "LINE Notify로전송할 메세지"
+      example: "안녕하세요. LINE Notify 입니다."
+      selector:
+        text:
+    stickerPackageId:
+      description: "스티커 Package ID"
+      example: "446"
+      selector:
+        text:   
+    stickerId:
+      description: "스티커 ID"
+      example: "1988"
+      selector:
+        text:
+
