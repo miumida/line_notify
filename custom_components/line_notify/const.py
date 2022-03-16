@@ -1,5 +1,5 @@
 DOMAIN = 'line_notify'
-TITLE   = 'LINE Nofity'
+TITLE   = 'LINE Notify'
 VERSION = '1.1.0'
 
 CONF_TOKEN = 'token'
