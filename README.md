@@ -35,8 +35,11 @@ Notify이기때문에 따로 센서가 생성되거나 하지는 않습니다. �
 <br>
 
 ## Usage
-### configuration
-- HA 설정에 line_notify를 추가합니다.<br>
+### Custom Integration
+- 구성 > 통합구성요소 > 통합구성요소 추가하기 > Galaxy Home Mini 선택 > Token 입력 및 Device ID 선택 후, 확인.
+
+### Configuration(yaml) : notify로 등록
+- configuration.yaml에 line_notify를 추가합니다.<br>
 ```yaml
 notify:
   - platform: line_notify
