@@ -16,6 +16,7 @@ Notify이기때문에 따로 센서가 생성되거나 하지는 않습니다. �
 | v1.0.2  | 2021.03.09  | Bug Fixed  |
 | v1.0.3  | 2021.12.12  | Bug Fixed  |
 | v1.1.0  | 2022.03.16  | 통합구성요소 추가 |
+| v1.1.1  | 2022.03.21  | Bug Fixed |
 
 <br>
 
@@ -73,6 +74,6 @@ notify:
 [2] LINE 스티커 리스트 (<https://developers.line.biz/media/messaging-api/sticker_list.pdf>)<br>
 
 
-[version-shield]: https://img.shields.io/badge/version-v1.1.0-orange.svg
+[version-shield]: https://img.shields.io/badge/version-v1.1.1-orange.svg
 [hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg
