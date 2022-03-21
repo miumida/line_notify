@@ -17,11 +17,9 @@ from homeassistant.components.notify import (
 )
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 import homeassistant.helpers.config_validation as cv
+from .const import DOMAIN, CONF_TOKEN, NOTIFY_LINE_API_URL
 
 _LOGGER = logging.getLogger(__name__)
-
-NOTIFY_LINE_API_URL = 'https://notify-api.line.me/api/notify'
-CONF_TOKEN = "token"
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
@@ -77,6 +75,7 @@ class LineNotificationService(BaseNotificationService):
         request = requests.post(url, headers=self._headers, data=data, files=file)
 
         if request.status_code != HTTPStatus.OK:
-            _LOGGER.error( "Error %d on load URL %s", request.status_code, request.url)
+            _LOGGER.error( f"[{DOMAIN}] Error %d on load URL %s", request.status_code, request.url)
+            _LOGGER.error( f"[{DOMAIN}] Error -> %s", request.json())
         else:
-            _LOGGER.debug("Line Notify  send: %s", request.json())
+            _LOGGER.debug(f"[{DOMAIN}] Line Notify  send: %s", request.json())

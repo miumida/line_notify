@@ -92,6 +92,7 @@ async def async_setup_entry(hass, config_entry):
 
                 if request.status != HTTPStatus.OK:
                     _LOGGER.error( f"[{DOMAIN}] Error %d on load URL : %s", request.status, request.url)
+                    _LOGGER.error( f"[{DOMAIN}] Error -> %s", await request.json())
                 else:
                     _LOGGER.debug(f"[{DOMAIN}] send_message : %s", await request.json())
 
