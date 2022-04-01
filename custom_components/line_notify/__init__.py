@@ -66,7 +66,7 @@ async def async_setup_entry(hass, config_entry):
         'Authorization' : 'Bearer {}'.format(token)
     }
 
-    # speak add service
+    # send_message add service
     def send_message(service):
         message = service.data["message"]
 
