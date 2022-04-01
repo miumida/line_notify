@@ -17,6 +17,7 @@ Notify이기때문에 따로 센서가 생성되거나 하지는 않습니다. �
 | v1.0.3  | 2021.12.12  | Bug Fixed  |
 | v1.1.0  | 2022.03.16  | 통합구성요소 추가 |
 | v1.1.1  | 2022.03.21  | Bug Fixed |
+| v1.2.0  | 2022.03.21  | imageFile, imageUrl 파라미터 추가 |
 
 <br>
 
@@ -66,6 +67,7 @@ notify:
 |stickerId| (옵션) stickerPackageId와 항상 함께 사용  |
 |stickerPackageId| (옵션) stickerId와 항상 함께 사용 |
 |imageFile| (옵션) LINE으로 전송할 이미지파일 경로. 예)'/config/media/wyze_cam/image.png' |
+|imageUrl| (옵션) LINE으로 전송할 이미지URL 주소. 예)'http://www.wyze_cam/image.png' |
 
 <br>
 
@@ -74,6 +76,6 @@ notify:
 [2] LINE 스티커 리스트 (<https://developers.line.biz/media/messaging-api/sticker_list.pdf>)<br>
 
 
-[version-shield]: https://img.shields.io/badge/version-v1.1.1-orange.svg
+[version-shield]: https://img.shields.io/badge/version-v1.2.0-orange.svg
 [hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg
