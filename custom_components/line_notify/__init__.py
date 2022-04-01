@@ -66,41 +66,49 @@ async def async_setup_entry(hass, config_entry):
         'Authorization' : 'Bearer {}'.format(token)
     }
 
-    session = async_get_clientsession(hass)
-
     # speak add service
-    async def send_message(service):
+    def send_message(service):
         message = service.data["message"]
+
+        url = NOTIFY_LINE_API_URL
 
         if len(message) > 1000:
             message = 'Message max length is 1000.'
             _LOGGER.error(f'[{DOMAIN}] send_message() Error, %s', message)
 
         try:
-            with async_timeout.timeout(90):
-                data = { "message": message }
+            data = { "message": message }
 
-                if ( "stickerId" in service.data ) and ( "stickerPackageId" in service.data ):
-                    data["stickerId"]        = service.data["stickerId"]
-                    data["stickerPackageId"] = service.data["stickerPackageId"]
+            file = {}
 
-                file = {}
+            #sticker
+            if ( "stickerId" in service.data ) and ( "stickerPackageId" in service.data ):
+                data["stickerId"]        = service.data["stickerId"]
+                data["stickerPackageId"] = service.data["stickerPackageId"]
 
-                url = NOTIFY_LINE_API_URL
+            #imageFile
+            if "imageFile" in service.data:
+                imageFile = service.data["imageFile"]
+                file = { 'imageFile': open(imageFile, 'rb') }
 
-                request = await session.post(url, headers=hdr, data=data)
+            #imageUrl
+            if "imageUrl" in service.data:
+                imageUrl = service.data["imageUrl"]
+                data["imageThumbnail"] = imageUrl
+                data["imageFullsize"]  = imageUrl
 
-                if request.status != HTTPStatus.OK:
-                    _LOGGER.error( f"[{DOMAIN}] Error %d on load URL : %s", request.status, request.url)
-                    _LOGGER.error( f"[{DOMAIN}] Error -> %s", await request.json())
-                else:
-                    _LOGGER.debug(f"[{DOMAIN}] send_message : %s", await request.json())
+            request = requests.post(url, headers=hdr, data=data, files=file)
 
-        except (asyncio.TimeoutError, aiohttp.ClientError):
-            _LOGGER.error(f"[{DOMAIN}] Timeout Error.")
+            if request.status_code != HTTPStatus.OK:
+                _LOGGER.error( f"[{DOMAIN}] Error %d on load URL %s", request.status_code, request.url)
+                _LOGGER.error( f"[{DOMAIN}] Error -> %s", request.json())
+            else:
+                _LOGGER.debug(f"[{DOMAIN}] Line Notify  send: %s", request.json())
+
+        except Exception as ex:
+            _LOGGER.error(f"[{DOMAIN}] Exception Error -> %s", ex)
 
 
     hass.services.async_register(DOMAIN, "send_message", send_message)
 
     return True
-
