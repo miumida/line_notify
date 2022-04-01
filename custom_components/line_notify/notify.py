@@ -70,6 +70,12 @@ class LineNotificationService(BaseNotificationService):
                 imageFile = param["imageFile"]
                 file = { 'imageFile': open(imageFile, 'rb') }
 
+            #imageUrl
+            if "imageUrl" in param:
+                imageUrl = param["imageUrl"]
+                data["imageThumbnail"] = imageUrl
+                data["imageFullsize"]  = imageUrl
+
         url = NOTIFY_LINE_API_URL
 
         request = requests.post(url, headers=self._headers, data=data, files=file)
