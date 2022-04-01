@@ -1,5 +1,4 @@
 # Example services.yaml entry
-
 send_message:
   # Description of the service
   description: "LINE Notify API를 이용하여 메세지를 전송합니다."
@@ -19,4 +18,11 @@ send_message:
       example: "1988"
       selector:
         text:
-
+    imageFile:
+      description: "이미지 파일 : HA 내부 이미지 파일 경로"
+      selector:
+        text:
+    imageUrl:
+      description: "이미지(url) : 이미지 url 주소"
+      selector:
+        text:
